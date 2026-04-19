@@ -8,10 +8,10 @@ import TestimonialSection from "../../Components/Testimonial/testimonial";
 function TestimonialPage(){
     return(
         <>
-            <HeadTitle title="Testimonials - Marko - Digital Marketing Agency" />
+            <HeadTitle title="Testimonials - Checkmate Communication - Digital Marketing Agency" />
             <BannerInnerSection title="Testimonials" currentPage="Testimonials" />
             <TestimonialSection />
-            <NewsletterSection />
+            {/* <NewsletterSection /> */}
             <BlogSection />
         </>
     );

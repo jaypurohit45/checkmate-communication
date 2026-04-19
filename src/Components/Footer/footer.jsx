@@ -11,7 +11,7 @@ const Footer = () => {
                             <div className="col col-lg-4">
                                 <div className="footer-logo-container">
                                     <div className="logo-container-footer">
-                                    <img src="/assets/images/marko-logo.png" alt="Logo" className="site-logo img-fluid" />
+                                    <img src="/assets/images/Checkmate Communication-logo.png" alt="Logo" className="site-logo img-fluid" />
                                     </div>
                                     <h4>Driving Digital Growth with Innovation & Strategy</h4>
                                     <p>
@@ -52,7 +52,7 @@ const Footer = () => {
                                 <div className="footer-contact-container">
                                     <h5>Contact Info</h5>
                                     <ul className="contact-list">
-                                        <li>hello@markoagency.com</li>
+                                        <li>hello@Checkmate Communicationagency.com</li>
                                         <li>+1 234 567 890</li>
                                         <li>123 Digital Street, New York, USA</li>
                                     </ul>
@@ -89,7 +89,7 @@ const Footer = () => {
                     </div>
 
                     <div className="copyright-container">
-                        <span className="copyright">© 2025 Marko. Fox Creation All Rights Reserved.</span>
+                        <span className="copyright">© 2025 Checkmate Communication. All Rights Reserved.</span>
                         <div className="d-flex flex-row gspace-2">
                             <a href="#" className="legal-link">Terms of Service</a>
                             <a href="#" className="legal-link">Privacy Policy</a>

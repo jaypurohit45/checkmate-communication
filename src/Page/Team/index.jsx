@@ -8,10 +8,10 @@ import TeamExtendSection from "../../Components/Team/TeamExtend";
 function TeamPage(){
     return(
         <>
-            <HeadTitle title="Our Team - Marko - Digital Marketing Agency" />
+            <HeadTitle title="Our Team - Checkmate Communication - Digital Marketing Agency" />
             <BannerInnerSection title="Meet Our Team" currentPage="Our Team"/>
             <TeamExtendSection />
-            <PartnershipSection />
+            {/* <PartnershipSection /> */}
             <ChooseUsSection />
         </>
     );

@@ -17,19 +17,19 @@ import BlogSection from "../../Components/Blog/blog";
 function HomePage(){
     return(
         <>
-            <HeadTitle title="Home - Marko - Digital Marketing Agency" />
+            <HeadTitle title="Home - Checkmate Communication - Digital Marketing Agency" />
             <BannerHomeSection />
             <ExpertiseSection />
-            <PartnershipSection />
+            {/* <PartnershipSection /> */}
             <ChooseUsSection />
             <GuideBannerSection />
             <ModalVideoSection />
             <ServiceSection />
             <CaseStudiesSection noPadding={true} />
-            <TestimonialSection />
+            {/* <TestimonialSection /> */}
             <DigitalProcessSection />
-            <PricingPlanSection />
-            <NewsletterSection />
+            {/* <PricingPlanSection /> */}
+            {/* <NewsletterSection /> */}
             <BlogSection />
         </>
     );

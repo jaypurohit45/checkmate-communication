@@ -1,63 +1,50 @@
 import React from "react";
-import useAnimateOnScroll from "../Hooks/useAnimateOnScroll";
-import useCounterOnScroll from "../Hooks/useCounterOnScroll";
+import AnimateOnScroll from "../Hooks/AnimateOnScroll";
 
 function AboutSection(){
-    useAnimateOnScroll();
-    useCounterOnScroll();
 
     return(
         <div className="section">
             <div className="hero-container">
                 <div className="d-flex flex-column flex-lg-row gspace-5">
+                    
+                    {/* LEFT SIDE: Image Fixed for Taller Height */}
                     <div className="about-img-layout">
-                        <div className="image-container about-img">
+                        <div className="image-container about-img" style={{ position: "relative", width: "100%" }}>
+                            <AnimateOnScroll animation="fadeInUp" speed="normal">
                             <img
-                                src="/assets/images/working-job-career-casual-showing-SJZWF3N-1024x737.jpg"
+                                src="/assets/images/about.webp"
                                 alt="About Us Image"
-                                className="img-fluid animate-box animated animate__animated"
-                                data-animate="animate__fadeInUp"
+                                className="img-fluid"
+                                style={{ 
+                                    borderRadius: "12px", 
+                                    width: "100%", 
+                                    minHeight: "550px", /* This forces the 40% taller height */
+                                    objectFit: "cover"  /* This ensures the image doesn't stretch or distort */
+                                }}
                             />
-                        
-                            <div className="about-layout">
-                                <div className="d-flex flex-column">
-                                    <div className="card-about-wrapper">
-                                        <div
-                                            className="card card-about animate-box animated animate__animated"
-                                            data-animate="animate__fadeInDown"
-                                            >
-                                            <div className="d-flex flex-row align-items-center">
-                                                <span className="counter" data-target="21"></span>
-                                                <span className="counter-detail">+</span>
-                                            </div>
-                                            <h6>Years of Experience on Digital Marketing Services</h6>
-                                        </div>
-                                    </div>
-                                <div className="about-spacer"></div>
-                                </div>
-                                <div className="about-spacer"></div>
-                            </div>
+                            </AnimateOnScroll>
                         </div>
                     </div>
+
+                    {/* RIGHT SIDE: 100% Original Text & Layout */}
                     <div className="about-title">
                         <div className="d-flex flex-column gspace-2">
-                            <div
-                                className="sub-heading animate-box animated animate__animated"
-                                data-animate="animate__fadeInRight"
-                            >
-                                <i className="fa-regular fa-circle-dot"></i>
-                                <span>About Us</span>
-                            </div>
+                            <AnimateOnScroll animation="fadeInRight" speed="normal">
+                                <div
+                                    className="sub-heading"
+                                >
+                                    <i className="fa-regular fa-circle-dot"></i>
+                                    <span>About Us</span>
+                                </div>
+                            </AnimateOnScroll>
 
-                            <h2
-                                className="title-heading animate-box animated animate__animated"
-                                data-animate="animate__fadeInRight"
-                            >
-                                Who We Are & What Drives Us
-                            </h2>
+                            <AnimateOnScroll animation="fadeInRight" speed="normal">
+                                <h2 className="title-heading">Who We Are & What Drives Us</h2>
+                            </AnimateOnScroll>
 
                             <p>
-                                At Marko, we specialize in crafting innovative digital marketing strategies
+                                At Checkmate Communication, we specialize in crafting innovative digital marketing strategies
                                 that drive real business growth. Our about ensures your brand stays ahead
                                 in the competitive digital landscape.
                             </p>
@@ -85,7 +72,7 @@ function AboutSection(){
                             </div>
                         </div>
                     </div>
-                    </div>
+                </div>
             </div>
         </div>
 

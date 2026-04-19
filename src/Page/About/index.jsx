@@ -13,16 +13,16 @@ import TestimonialSection from "../../Components/Testimonial/testimonial";
 function AboutPage(){
     return(
         <>
-            <HeadTitle title="About - Marko - Digital Marketing Agency"/>
-            <BannerInnerSection title="About Marko" currentPage="About Us" />
+            <HeadTitle title="About - Checkmate Communication - Digital Marketing Agency"/>
+            <BannerInnerSection title="About Checkmate Communication" currentPage="About Us" />
             <AboutSection />
-            <PartnershipSection />
-            <ChooseUsAboutSection />
+            {/* <PartnershipSection /> */}
+            {/* <ChooseUsAboutSection /> */}
             <GuideBannerSection />
             <ModalVideoSection />
             <TeamSection />
             <DigitalProcessSection />
-            <TestimonialSection />
+            {/* <TestimonialSection /> */}
         </>
     );
 }

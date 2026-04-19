@@ -1,76 +1,82 @@
-import React, { use } from "react";
+import React from "react";
 import { services } from "../../Data/ServiceData";
-import useAnimateOnScroll from "../Hooks/useAnimateOnScroll";
+import AnimateOnScroll from "../Hooks/AnimateOnScroll";
 
 const SingleServiceSection = () => {
-    useAnimateOnScroll();
     return (
         <div className="section pb-0">
             <div className="hero-container">
                 <div className="d-flex flex-column gspace-5">
-                    <div className="image-container">
-                        <img
-                        src="/assets/images/collaborative-process-of-multicultural-skilled-peo-5EHBQRG-1024x683.jpg"
-                        alt="Service Image"
-                        className="single-service-img"
-                        />
+                    
+                    {/* MAIN IMAGE BLOCK - Fixed to show full image without cutting */}
+                    <div className="d-flex flex-column gspace-3">
+                        <div className="image-container" style={{ width: "100%" }}>
+                            <img
+                                src="/assets/images/service-social-main.webp"
+                                alt="Social Media Marketing Strategy"
+                                className="single-service-img img-fluid shadow-sm"
+                                style={{ borderRadius: "12px", width: "100%", objectFit: "cover" }}
+                            />
+                        </div>
+                        
+                        {/* Title block moved safely out of the image container so it doesn't overlap/cut */}
                         <div className="single-service-title-layout">
                             <div>
-                                <div className="single-service-spacer"></div>
                                 <div className="single-service-title-wrapper">
                                     <div className="single-service-title">
-                                        <div
-                                        className="sub-heading animate-box animated slow animate__animated"
-                                        data-animate="animate__fadeInRight"
-                                        >
-                                        <i className="fa-regular fa-circle-dot"></i>
-                                            <span>Our Expertise</span>
-                                        </div>
-                                        <h3
-                                        className="title-heading animate-box animated animate__animated"
-                                        data-animate="animate__fadeInRight"
-                                        >
-                                        Boost Your Brand with Strategic Social Media Marketing
-                                        </h3>
+                                        <AnimateOnScroll animation="fadeInRight" speed="slow">
+                                            <div className="sub-heading">
+                                                <i className="fa-regular fa-circle-dot"></i>
+                                                <span>Our Expertise</span>
+                                            </div>
+                                        </AnimateOnScroll>
+                                        <AnimateOnScroll animation="fadeInRight" speed="normal">
+                                            <h3 className="title-heading">
+                                                Boost Your Brand with Strategic Social Media Marketing
+                                            </h3>
+                                        </AnimateOnScroll>
                                         <p>
                                             Maximize engagement, build loyal communities, and drive conversions across all major platforms lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <div className="single-service-spacer"></div>
                         </div>
                     </div>
 
-                    <div className="row row-cols-lg-2 row-cols-1 grid-spacer-5">
+                    <div className="row row-cols-lg-2 row-cols-1 grid-spacer-5 mt-4">
                         <div className="col col-lg-8">
                             <div className="d-flex flex-column gspace-2">
                                 <h4>Overview</h4>
                                 <p>
-                                    At Marko, we help brands grow through custom-tailored social media marketing strategies that connect with your audience. From content creation to campaign optimization, we make sure your presence on platforms like Instagram, Facebook, LinkedIn, and TikTok stands out. Whether you’re launching a new brand or scaling an existing one, our experts turn social media into a powerful growth engine.
+                                    At Checkmate Communication, we help brands grow through custom-tailored social media marketing strategies that connect with your audience. From content creation to campaign optimization, we make sure your presence on platforms like Instagram, Facebook, LinkedIn, and TikTok stands out. Whether you’re launching a new brand or scaling an existing one, our experts turn social media into a powerful growth engine.
                                 </p>
+                                
+                                {/* The 2 Smaller Grid Images */}
                                 <div className="row row-cols-md-2 row-cols-1 grid-spacer-2 grid-spacer-md-3">
                                     <div className="col">
-                                        <div className="image-container">
-                                        <img
-                                            src="/assets/images/young-business-team-working-EH8KQ2R-1024x683.jpg"
-                                            alt="Service Image"
-                                            className="img-fluid"
-                                        />
+                                        <div className="image-container" style={{ width: "100%" }}>
+                                            <img
+                                                src="/assets/images/service-social-1.webp"
+                                                alt="Social Media Engagement"
+                                                className="img-fluid"
+                                                style={{ borderRadius: "12px", width: "100%", objectFit: "cover" }}
+                                            />
                                         </div>
                                     </div>
                                     <div className="col">
-                                        <div className="image-container">
-                                        <img
-                                            src="/assets/images/business-team-working-in-a-start-up-office-8ENVVX5-1024x683.jpg"
-                                            alt="Service Image"
-                                            className="img-fluid"
-                                        />
+                                        <div className="image-container" style={{ width: "100%" }}>
+                                            <img
+                                                src="/assets/images/service-social-2.webp"
+                                                alt="Social Media Analytics"
+                                                className="img-fluid"
+                                                style={{ borderRadius: "12px", width: "100%", objectFit: "cover" }}
+                                            />
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="card service-included">
+                                <div className="card service-included mt-4">
                                     <h4>What's Included</h4>
                                     <div className="underline-accent-short"></div>
                                     <p>
@@ -95,12 +101,12 @@ const SingleServiceSection = () => {
                                     </div>
                                 </div>
 
-                                <h4>Why Choose Marko for Social Media Marketing?</h4>
+                                <h4 className="mt-4">Why Choose Checkmate Communication for Social Media Marketing?</h4>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis ac odio et efficitur. Proin velit neque, sollicitudin nec purus eu, suscipit feugiat tellus.
                                 </p>
 
-                                <div className="row row-cols-2">
+                                <div className="row row-cols-1 row-cols-md-2">
                                     <div className="col">
                                         <div className="d-flex flex-column gspace-2">
                                             <div className="d-flex flex-column flex-md-row align-items-center text-center text-md-start gspace-1">
@@ -140,6 +146,8 @@ const SingleServiceSection = () => {
                                 </div>
                             </div>
                         </div>
+                        
+                        {/* RIGHT SIDEBAR - 100% Original */}
                         <div className="col col-lg-4">
                             <div className="d-flex flex-column flex-md-row flex-lg-column justify-content-between gspace-5">
                                 <div className="card service-recent">
@@ -155,9 +163,9 @@ const SingleServiceSection = () => {
                                     ))}
                                 </ul>
                                 </div>
-                                <div className="cta-service-banner">
+                                <div className="cta-service-banner" style={{ backgroundImage: "url('/assets/images/service-cta-bg.webp')", backgroundSize: "cover", backgroundPosition: "center", borderRadius: "12px" }}>
                                     <div className="spacer"></div>
-                                    <h3 className="title-heading">Transform Your Business with Marko!</h3>
+                                    <h3 className="title-heading">Transform Your Business with Checkmate Communication!</h3>
                                     <p>
                                         Take your digital marketing to the next level with data-driven strategies and innovative solutions. Let's create something amazing together!
                                     </p>

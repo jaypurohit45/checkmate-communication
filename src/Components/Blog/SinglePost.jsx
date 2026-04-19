@@ -34,9 +34,10 @@ const BlogPostSection = () => {
                                 </div>
                                 ))}
                         </div>
-                        <div className="cta-service-banner">
+                        <div className="cta-service-banner" style={{ backgroundImage: "url('/assets/images/service-cta-bg.webp')", backgroundSize: "cover", backgroundPosition: "center", borderRadius: "12px" }}>
+
                             <div className="spacer"></div>
-                            <h3 className="title-heading">Transform Your Business with Marko!</h3>
+                            <h3 className="title-heading">Transform Your Business with Checkmate Communication!</h3>
                             <p>
                                 Take your digital marketing to the next level with data-driven strategies and innovative solutions. Let's create something amazing together!
                             </p>
@@ -50,10 +51,12 @@ const BlogPostSection = () => {
                 <div className="col col-lg-8 order-1 order-lg-2">
                     <div className="d-flex flex-column gspace-2">
                         <div className="post-image">
+                            {/* Replaced dummy image with your new SEO webp image */}
                             <img
-                            src="/assets/images/young-people-working-in-the-grunge-office-V55NNM4-1024x683.jpg"
+                            src="/assets/images/blog-growth-seo.webp"
                             alt="Recent Post"
                             className="img-fluid"
+                            style={{ borderRadius: "12px" }}
                             />
                         </div>
                         <h3>How to Grow Your Digital Business</h3>
@@ -71,7 +74,7 @@ const BlogPostSection = () => {
                             </div>
                             <div className="d-flex flex-row gspace-1 align-items-center">
                                 <i className="fa-solid fa-user accent-color"></i>
-                                <span className="meta-data">Fox Creation</span>
+                                <span className="meta-data">Checkmate Team</span>
                             </div>
                         </div>
 
@@ -83,13 +86,7 @@ const BlogPostSection = () => {
                             business scale successfully.
                         </p>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis ac odio et efficitur. Proin velit neque, sollicitudin
-                            nec purus eu, suscipit feugiat tellus. Mauris non iaculis nulla. Curabitur placerat nulla sodales, consequat nunc nec, consectetur
-                            ante. Aenean et enim eu orci dapibus maximus ut non ex. Sed eu pharetra orci, sed consequat nisi. Praesent porta ipsum id erat
-                            interdum, eleifend bibendum enim sodales. In ut nisl blandit, molestie enim sit amet, ultricies ipsum. Nunc eu sapien leo.
-                            Nullam a tristique lacus, sit amet fringilla turpis. Pellentesque tempor, diam sed consectetur fermentum, leo turpis lobortis mi,
-                            eu gravida lorem mauris ut est. Donec pellentesque nisl vel purus condimentum posuere. Nulla laoreet arcu non convallis lobortis.
-                            Aenean in lacus nec magna tincidunt faucibus vel sit amet risus.
+                            The first pillar of growth is understanding your audience's search intent. By leveraging advanced SEO techniques, you ensure that your brand appears exactly when potential customers are looking for your services. Coupled with targeted PPC campaigns, you can capture both high-intent organic traffic and immediate leads. Remember, it is not just about driving traffic; it is about driving the *right* traffic to a highly optimized landing page that converts visitors into loyal clients.
                         </p>
                     </div>
                     <div className="quote-container">
@@ -101,19 +98,15 @@ const BlogPostSection = () => {
                         </div>
                         </div>
                         <p className="quote">
-                            Nam finibus diam non orci lobortis volutpat. In non odio in enim scelerisque finibus. Praesent mattis accumsan metus ut ultrices.
-                            Quisque tortor dui, facilisis at pharetra non, tincidunt a sem. quam diam. Morbi lobortis massa id porta maximus.
+                            "Marketing is no longer about the stuff that you make, but about the stories you tell and the measurable data you use to refine them."
                         </p>
                         <div>
-                        <h5>Adam Malik</h5>
-                        <p className="quote-description">User Malik</p>
+                        <h5>Checkmate Strategy Team</h5>
+                        <p className="quote-description">Digital Growth Experts</p>
                         </div>
                     </div>
                     <p>
-                        Pellentesque ac velit libero. Phasellus sed elit sit amet diam ultricies dapibus. Curabitur pretium, eros ut posuere finibus, sem
-                        mauris accumsan nulla, nec elementum metus turpis at nibh. Phasellus commodo lobortis semper. Fusce velit augue, efficitur id elit
-                        ut, volutpat feugiat est. Cras ac mi orci. Maecenas nibh neque, faucibus sed lacus nec, elementum tempor dui. Fusce porta nunc vitae
-                        finibus dapibus. In vulputate nisl id mollis fringilla.
+                        Finally, never underestimate the power of consistent analysis. A/B testing your ad copy, adjusting your keywords based on monthly search volume trends, and refining your social media approach based on engagement metrics are what separate stagnant businesses from industry leaders. At Checkmate Communication, we handle this entire ecosystem so you can focus on what you do best: running your business.
                     </p>
                     </div>
                 </div>

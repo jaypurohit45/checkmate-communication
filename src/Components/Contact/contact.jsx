@@ -40,7 +40,7 @@ const ContactSection = () => {
                                 </div>
                                 <div className="d-grid">
                                     <span>Email Address</span>
-                                    <h5>hello@markoagency.com</h5>
+                                    <h5>hello@Checkmate Communicationagency.com</h5>
                                 </div>
                             </div>
                             <div className="d-flex flex-column flex-md-row align-items-center text-md-start text-center gspace-2">
@@ -53,25 +53,15 @@ const ContactSection = () => {
                                 </div>
                                 <div className="d-grid">
                                     <span>Office Address</span>
-                                    <h5>Marko HQ - 902 Digital Lane, San Francisco, CA 94110, USA</h5>
+                                    <h5>Checkmate Communication HQ - 902 Digital Lane, San Francisco, CA 94110, USA</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="col col-lg-7">
-                    <div id="success-message" className="alert success hidden">
-                        <span className="check-icon">
-                            <i className="fa-solid fa-2xl fa-check"></i>
-                        </span>
-                        <p>Thank you! Form submitted successfully.</p>
-                    </div>
-                    <div id="error-message" className="alert error hidden">
-                        <span className="cross-icon">
-                            <i className="fa-solid fa-2xl fa-xmark"></i>
-                        </span>
-                        <p>Oops! Form submission failed. Please try again.</p>
-                    </div>
+                    {/* The static alerts were safely removed from here so they don't duplicate. */}
+                    {/* ContactForm now handles the alerts exactly as you styled them! */}
                     <ContactForm />
                 </div>
             </div>
