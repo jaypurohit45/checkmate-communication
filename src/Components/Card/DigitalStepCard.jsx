@@ -10,8 +10,8 @@ const DigitalStepCard = ({ icon, step, title, content, isFirst }) => {
                     {!isFirst && <div className="step-spacer"></div>}
                         <div className="digital-process-step">
                             <div className="d-flex justify-content-between">
-                                <div>
-                                    <img src={icon} alt="Digital Process Icon" className="process-icon" />
+                                <div className="process-icon">
+                                    {icon}
                                 </div>
                                 <span>{step}</span>
                             </div>
@@ -24,6 +24,6 @@ const DigitalStepCard = ({ icon, step, title, content, isFirst }) => {
             </AnimateOnScroll>
         </>
     );
-  };
+};
 
 export default DigitalStepCard;

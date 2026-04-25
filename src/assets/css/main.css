@@ -80,22 +80,22 @@
     --primary: #D1D1D1;
     --secondary: #040404;
     --text-color: #8B8B8B;
-    --accent-color: #3821b6; 
+    --accent-color: #4563e7; 
     --accent-color-2: #FFFFFF;
     --accent-color-3: #1F1F1F;
     --accent-color-4: #0E0E0E;
     --accent-color-5: #0404047D;
-    --accent-color-6: #C82AEF85;
+    --accent-color-6: #4563e7;
     --accent-color-7: #FFFFFF8C;
     --star-color: #EFBC2A;
     --error-color: #e63946;
     --accent-transparent: #00000000;
     --accent-transparent-2: #00000073;
     --accent-transparent-3: rgba(255, 255, 255, 0.041);
-    --box-shadow-top-left: -3px -3px 7px 0px rgba(200.00000000000006, 42, 238.99999999999997, 0.44);
-    --box-shadow-bottom-right: 3px 3px 7px 0px rgba(200.00000000000006, 42, 238.99999999999997, 0.44);
-    --box-shadow-top-left-wide: -3px -3px 10px 0px rgba(200.00000000000006, 42, 238.99999999999997, 0.44);
-    --box-shadow-bottom-right-wide: 3px 3px 10px 0px rgba(200.00000000000006, 42, 238.99999999999997, 0.44);
+--box-shadow-top-left: -3px -3px 7px 0px rgba(69, 99, 231, 0.44);
+--box-shadow-bottom-right: 3px 3px 7px 0px rgba(69, 99, 231, 0.44);
+--box-shadow-top-left-wide: -3px -3px 10px 0px rgba(69, 99, 231, 0.44);
+--box-shadow-bottom-right-wide: 3px 3px 10px 0px rgba(69, 99, 231, 0.44);
     --global-font: "Plus Jakarta Sans", sans-serif;
     --global-border-radius: 25px 25px 25px 25px;
     --animation-normal: 1.25s;
@@ -148,7 +148,7 @@
     --primary: #1F1F1F;
     --secondary: #FFFAFA;
     --text-color: #4A4A4A;
-    --accent-color: #C82AEF;
+    --accent-color: #4563e7;
     --accent-color-2: #000000;
     --accent-color-3: #e3caff; 
     --accent-color-4: #f5f5f5;
@@ -188,6 +188,12 @@
         border-width: 13px;
     }
 }
+
+#banner-video-background iframe {
+  pointer-events: none;
+}
+
+
 
 @keyframes menu-animation {
     0% {
@@ -261,12 +267,12 @@ body.lightmode .keep-dark {
     --primary: #D1D1D1;
     --secondary: #040404;
     --text-color: #8B8B8B;
-    --accent-color: #C82AEF; 
+    --accent-color: #4563e7; 
     --accent-color-2: #FFFFFF;
     --accent-color-3: #1F1F1F;
     --accent-color-4: #0E0E0E;
     --accent-color-5: #0404047D;
-    --accent-color-6: #C82AEF85;
+    --accent-color-6: #4563e7;
     --accent-color-7: #FFFFFF8C;
     --star-color: #EFBC2A;
     --error-color: #e63946;

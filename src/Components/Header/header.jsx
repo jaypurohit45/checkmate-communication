@@ -8,43 +8,92 @@ function Navbar() {
 
   return (
     <div className="navbar-wrapper">
+      <style>{`
+        /* 1. Mobile Logo Scaling: Ensures it fits on the same line as icons */
+        .responsive-logo {
+          height: 40px !important;
+          width: auto;
+          max-width: 100%;
+          object-fit: contain;
+          transition: height 0.2s ease;
+        }
+
+        /* 2. Fixes the mobile sidebar so links stack vertically when opened */
+        @media (max-width: 1199.98px) {
+          .mobile-nav-stack {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            padding-top: 1rem;
+          }
+          .mobile-nav-stack .nav-item {
+            width: 100%;
+          }
+        }
+
+        /* 3. Desktop specific overrides (Untouched original size) */
+        @media (min-width: 1200px) {
+          .responsive-logo {
+            height: 55px !important; 
+          }
+        }
+      `}</style>
+
+      {/* Standard Bootstrap navbar expand logic */}
       <nav className="navbar navbar-expand-xl">
         <div className="navbar-container container-fluid">
           
-          {/* LOGO CONTAINER */}
-          <div className="logo-container">
-            <NavLink className="navbar-brand d-block" to="/" style={{ padding: 0 }}>
-              <img
-                src="/assets/images/Checkmate Communication-logo.png"
-                className="site-logo shadow-sm"
-                alt="Logo"
-                style={{
-                  width: "45px",
-                  height: "45px",
-                  borderRadius: "50%",
-                  objectFit: "cover",
-                  display: "block"
-                }}
-              />
-            </NavLink>
+          {/* 1. LOGO: 'me-auto' forces it to the left and pushes everything else right */}
+          <NavLink className="navbar-brand me-auto p-0 m-0" to="/">
+            <img
+              src="/assets/images/Checkmate-logo.png"
+              alt="Logo"
+              className="responsive-logo"
+            />
+          </NavLink>
+
+          {/* 2. STRICTLY MOBILE ACTIONS: flex-row and flex-nowrap lock them in one horizontal line */}
+          <div className="d-flex d-xl-none flex-row flex-nowrap align-items-center" style={{ gap: "8px" }}>
+            <div className="m-0 p-0 d-flex align-items-center">
+              <ThemeSwitcher />
+            </div>
+            
+            {/* Mobile Phone CTA (Circular Icon Only) */}
+            <div 
+              className="d-flex justify-content-center align-items-center"
+              style={{ 
+                width: "36px", 
+                height: "36px", 
+                fontSize: "0.85rem", 
+                backgroundColor: "var(--primary-color, #0d6efd)", 
+                color: "#fff", 
+                borderRadius: "50%",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+                margin: 0,
+                flexShrink: 0 /* Prevents icon from squishing */
+              }}
+            >
+              <i className="fa-solid fa-phone-volume"></i>
+            </div>
+
+            {/* Hamburger Menu Toggler */}
+            <button
+              className="navbar-toggler nav-btn border-0 shadow-none p-1 ms-1"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              style={{ flexShrink: 0 }} /* Prevents button from squishing */
+            >
+              <i className="fa-solid fa-bars fs-4"></i>
+            </button>
           </div>
 
-          <button
-            className="navbar-toggler nav-btn"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i className="fa-solid fa-bars"></i>
-          </button>
-
+          {/* 3. COLLAPSIBLE LINKS: Stays horizontal on laptop, stacks perfectly on mobile */}
           <div className="collapse navbar-collapse" id="navbarNav">
-            {/* NAV LINKS - Added whiteSpace: "nowrap" to the entire list */}
             <ul 
-              className="navbar-nav mx-auto d-flex flex-row flex-nowrap align-items-center" 
+              className="navbar-nav mx-auto d-flex flex-xl-row flex-xl-nowrap align-items-xl-center mobile-nav-stack" 
               style={{ columnGap: "1rem", margin: 0, padding: 0, whiteSpace: "nowrap" }}
             >
               <li className="nav-item">
@@ -119,7 +168,6 @@ function Navbar() {
               </li>
 
               <li className="nav-item">
-                {/* STRICT NOWRAP added directly to the Contact Us link */}
                 <NavLink 
                   to="/contact" 
                   className="nav-link" 
@@ -131,13 +179,12 @@ function Navbar() {
             </ul>
           </div>
 
-          {/* ACTION BUTTONS */}
-          <div className="navbar-action-container d-flex flex-row align-items-center" style={{ gap: "12px" }}>
+          {/* 4. STRICTLY LAPTOP ACTIONS: Hidden completely on mobile, identical to your original design */}
+          <div className="navbar-action-container d-none d-xl-flex flex-row align-items-center" style={{ gap: "12px" }}>
             <div className="navbar-action-button m-0 p-0">
               <ThemeSwitcher />
             </div>
             
-            {/* Custom Contact Pill Container */}
             <div 
               className="d-flex align-items-center" 
               style={{ 

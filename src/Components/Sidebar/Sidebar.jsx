@@ -25,6 +25,41 @@ function Sidebar() {
 
     return (
         <>
+            {/* Embedded CSS for Smooth Transitions & Logo Sizing */}
+            <style>{`
+                /* Smooth Dropdown Animation */
+                .sidebar-dropdown-menu {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.4s ease-in-out;
+                    padding-top: 0 !important;
+                    padding-bottom: 0 !important;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+                
+                .sidebar-dropdown-menu.active {
+                    max-height: 500px; /* Arbitrary high value to allow sliding open */
+                    padding-top: 10px !important; 
+                }
+
+                /* Smooth Arrow Rotation */
+                .sidebar-dropdown-btn i {
+                    transition: transform 0.3s ease-in-out;
+                }
+                .sidebar-dropdown-btn.rotate-icon i {
+                    transform: rotate(180deg);
+                }
+
+                /* Scaled Down Logo */
+                .sidebar-header .logo img {
+                    height: 70px !important; /* Smaller logo for the mobile sidebar */
+                    width: auto !important;
+                    max-width: 100%;
+                    object-fit: contain;
+                }
+            `}</style>
+
             {/* The Background Overlay */}
             <div 
                 className={`sidebar-overlay ${isOpen ? "active" : ""}`} 
@@ -36,8 +71,8 @@ function Sidebar() {
                 <div className="sidebar-header">
                     <div className="logo">
                         <img 
-                            src="/assets/images/Checkmate Communication-logo.png" 
-                            className="site-logo img-fluid logo" 
+                            src="/assets/images/Checkmate-logo.png" 
+                            className="site-logo img-fluid" 
                             alt="Checkmate Communication Logo" 
                         />
                     </div>
@@ -54,8 +89,12 @@ function Sidebar() {
                     <li className={`sidebar-dropdown ${activeDropdown === 0 ? "active" : ""}`}>
                         <div className="dropdown-header">
                             <a href="#" onClick={(e) => e.preventDefault()}>Services</a>
-                            <button className="sidebar-dropdown-btn" onClick={() => toggleDropdown(0)}>
-                                <i className={`fa-solid fa-angle-${activeDropdown === 0 ? "up" : "down"}`}></i>
+                            {/* Replaced conditional up/down class with smooth rotation class */}
+                            <button 
+                                className={`sidebar-dropdown-btn ${activeDropdown === 0 ? "rotate-icon" : ""}`} 
+                                onClick={() => toggleDropdown(0)}
+                            >
+                                <i className="fa-solid fa-angle-down"></i>
                             </button>
                         </div>
                         <ul className={`sidebar-dropdown-menu ${activeDropdown === 0 ? "active" : ""}`}>
@@ -68,8 +107,11 @@ function Sidebar() {
                     <li className={`sidebar-dropdown ${activeDropdown === 1 ? "active" : ""}`}>
                         <div className="dropdown-header">
                             <a href="#" onClick={(e) => e.preventDefault()}>Pages</a>
-                            <button className="sidebar-dropdown-btn" onClick={() => toggleDropdown(1)}>
-                                <i className={`fa-solid fa-angle-${activeDropdown === 1 ? "up" : "down"}`}></i>
+                            <button 
+                                className={`sidebar-dropdown-btn ${activeDropdown === 1 ? "rotate-icon" : ""}`} 
+                                onClick={() => toggleDropdown(1)}
+                            >
+                                <i className="fa-solid fa-angle-down"></i>
                             </button>
                         </div>
                         <ul className={`sidebar-dropdown-menu ${activeDropdown === 1 ? "active" : ""}`}>
@@ -87,8 +129,11 @@ function Sidebar() {
                     <li className={`sidebar-dropdown ${activeDropdown === 2 ? "active" : ""}`}>
                         <div className="dropdown-header">
                             <a href="#" onClick={(e) => e.preventDefault()}>Archive</a>
-                            <button className="sidebar-dropdown-btn" onClick={() => toggleDropdown(2)}>
-                                <i className={`fa-solid fa-angle-${activeDropdown === 2 ? "up" : "down"}`}></i>
+                            <button 
+                                className={`sidebar-dropdown-btn ${activeDropdown === 2 ? "rotate-icon" : ""}`} 
+                                onClick={() => toggleDropdown(2)}
+                            >
+                                <i className="fa-solid fa-angle-down"></i>
                             </button>
                         </div>
                         <ul className={`sidebar-dropdown-menu ${activeDropdown === 2 ? "active" : ""}`}>

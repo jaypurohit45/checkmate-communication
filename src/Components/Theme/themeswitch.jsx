@@ -21,7 +21,7 @@ export default function ThemeSwitcher() {
                 localStorage.setItem('lightmode', 'active');
     
                 siteLogos.forEach((logo) => {
-                    logo.setAttribute('src', 'assets/images/Checkmate Communication-logo-dark.png');
+                    logo.setAttribute('src', 'assets/images/Checkmate-logo.png');
                 });
     
                 partnerLogos.forEach((img) => {
@@ -35,7 +35,7 @@ export default function ThemeSwitcher() {
                 localStorage.removeItem('lightmode');
     
                 siteLogos.forEach((logo) => {
-                    logo.setAttribute('src', 'assets/images/Checkmate Communication-logo.png');
+                    logo.setAttribute('src', 'assets/images/Checkmate-logo.png');
                 });
     
                 partnerLogos.forEach((img) => {

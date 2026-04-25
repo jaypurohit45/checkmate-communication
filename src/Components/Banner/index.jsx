@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import VideoButton from "../Video/VideoButton";
 import AnimateOnScroll from "../Hooks/AnimateOnScroll";
 
 function BannerHomeSection() {
@@ -21,22 +20,24 @@ function BannerHomeSection() {
             playerRef.current = new window.YT.Player("banner-video-background", {
                 videoId: "P68V3iH4TeE",
                 playerVars: {
-                autoplay: 1,
-                controls: 0,
-                mute: 1,
-                loop: 1,
-                playlist: "P68V3iH4TeE",
-                showinfo: 0,
-                rel: 0,
-                enablejsapi: 1,
-                disablekb: 1,
-                modestbranding: 1,
-                iv_load_policy: 3,
-                'origin': window.location.origin
+                    autoplay: 1,
+                    controls: 0,
+                    mute: 1,
+                    loop: 1,
+                    playlist: "P68V3iH4TeE",
+                    showinfo: 0,
+                    rel: 0,
+                    enablejsapi: 1,
+                    disablekb: 1,
+                    modestbranding: 1,
+                    iv_load_policy: 3,
+                    fs: 0,
+                    playsinline: 1,
+                    origin: window.location.origin
                 },
                 events: {
-                onReady: onPlayerReady,
-                onStateChange: onPlayerStateChange
+                    onReady: onPlayerReady,
+                    onStateChange: onPlayerStateChange
                 }
             });
         };
@@ -78,19 +79,6 @@ function BannerHomeSection() {
             iframe.style.height = `${newHeight}px`;
         }
 
-        function handleYouTubeErrors() {
-            window.addEventListener('message', function(event) {
-                if (event.origin !== 'https://www.youtube.com') return;
-            
-                try {
-                    var data = JSON.parse(event.data);
-                   
-                } catch (e) {
-         
-                }
-            });
-        }
-
         return () => {
             window.removeEventListener("resize", setYoutubeSize);
         };
@@ -102,27 +90,48 @@ function BannerHomeSection() {
                 <div
                     ref={videoContainerRef}
                     className="banner-video-container keep-dark"
+                    style={{ position: "relative", overflow: "hidden" }}
                 >
                     <div id="banner-video-background"></div>
-                    <div className="hero-container position-relative">
+
+<div
+  style={{
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    background: "linear-gradient(rgba(69, 99, 231, 0.6), rgba(10, 10, 20, 0.8))",
+    zIndex: 1,
+    pointerEvents: "none"
+  }}
+></div>
+
+                    {/* Color Overlay */}
+                    <div
+  style={{
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    background: "rgba(0, 0, 0, 0.35)", // soft dark only
+    zIndex: 1,
+    pointerEvents: "none"
+  }}
+></div>
+
+                    <div className="hero-container position-relative" style={{ zIndex: 2 }}>
                         <div className="d-flex flex-column gspace-2">
                             <AnimateOnScroll animation="fadeInLeft" speed="normal">
                                 <h1 className="title-heading-banner">
                                     Your Move Towards Digital Dominance.
                                 </h1>
                             </AnimateOnScroll>
-                            <div className="banner-heading">
 
+                            <div className="banner-heading">
                                 <AnimateOnScroll animation="fadeInUp" speed="normal">
-                                    <div className="banner-video-content order-lg-1 order-2">
-                                        <div className="d-flex flex-column flex-lg-row text-lg-start text-center align-items-center gspace-5">
-                                            <VideoButton videoUrl="https://www.youtube.com/embed/VhBl3dHT5SY?autoplay=1" />
-                                            <p>
-                                                Watch our video reviews and see how businesses achieve success
-                                                with Checkmate Communication's digital marketing solutions.
-                                            </p>
-                                        </div>
-                                    </div>
+                                    <div className="banner-video-content order-lg-1 order-2"></div>
                                 </AnimateOnScroll>
 
                                 <AnimateOnScroll animation="fadeInRight" speed="normal">
@@ -139,17 +148,7 @@ function BannerHomeSection() {
                                                     <i className="fa-solid fa-arrow-right"></i>
                                                 </div>
                                             </a>
-                                            <div className="banner-reviewer">
-                                                {/* <div className="d-flex flex-row align-items-center">
-                                                    <img src="/assets/images/dummy-img-400x400.jpg" alt="Reviewer" className="avatar" />
-                                                    <img src="/assets/images/dummy-img-400x400.jpg" alt="Reviewer" className="avatar" />
-                                                    <img src="/assets/images/dummy-img-400x400.jpg" alt="Reviewer" className="avatar" />
-                                                </div> */}
-                                                {/* <div className="detail">
-                                                    <span>2.7k Positive</span>
-                                                    <span>Reviews</span>
-                                                </div> */}
-                                            </div>
+                                            <div className="banner-reviewer"></div>
                                         </div>
                                     </div>
                                 </AnimateOnScroll>
